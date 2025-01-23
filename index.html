@@ -4,12 +4,22 @@
   <head>
     <meta charset="UTF-8">
     <title>Hello HTML!</title>
+    <style>
+      body {background-color: powderblue;
+            border: 2px dashed plum      
+      }
+      h1 {color:blue}
+      p {color:red;
+        border: 2px solid darkblue;
+        padding: 30px
+      }
+    </style>
   </head>
 
-  <body>
+  <body style="background-color:powderblue;">
     <header>
       <!-- Headers -->
-      <h1>title="THis is heading 1" Hello World!</h1>
+      <h1 title="THis is heading 1"> Hello World!</h1>
       <h2>Hello World!</h2>
       <h3>Hello World!</h3>
       <h4>Hello World!</h4>
@@ -22,18 +32,47 @@
       <img src="https://placehold.it/200x200" alt="placeholder image" height = "200px" width="200px" title = "PLaceholder IMAGE"/>
 
       <!-- Paragraph -->
-      <p>This is a paragraph.</p>
+      <p style="background-color: burlywood;">This is a paragraph.</p>
+
       <p>This is a paragraph with <strong>BOLDED TEXT</strong>.</p>
+      
+      <p> hEllo <b>There</b></p>
+
+      <p style="font-size: 86%; text-align: center;"><i><mark>HELLO THERE</mark></i></p>
+
+      <p style="color:blue"><em>General Kenobi</em></p>
+
+      <p>I am afraid of <del>women</del> <ins>spiders</ins> <sub>right?</sub><sup>I AM ABOVE</sup></p>
+
+      <p> Why hello there <q>General Kenobi</q></p>
+
+      <blockquote>
+        The recent attempt on my life has left me scared, and deformed. But I assure you, my resolve
+        is as strong as ever. Hencforth, the republic will be reorganized into the First! Galactic! Empire! To
+        ensure a safe and <strong>Secure</strong>, society.
+      </blockquote>
+
+      <p> The <abbr title="United Soviet Socialst Republcis">USSR</abbr> was lost</p>
+
+      <bdo dir="rtl">Why Hello there</bdo>
+      <h1 style="background-color:rgb(60,179,113)"> GOODBYE</h1>
     
        <!-- Unordered list -->
        <ul>
-        <li>This is list item one</li>
+        <li>This is list item one</li> 
         <li>This is list item two</li>
         <li>This is list item three</li>
       </ul>
 
       <!-- Link -->
+
+      <a href="https://www.w3schools.com/" target = "_blank">Visit W3Schools.com!</a>
       <a href="https://www.google.com">This is a link to Google.com</a>
+      <p><a href="html_images.asp">HTML Images
+        <img src="smiley.gif" alt="HTML Tutorial" style="width:42px;height:42px;">
+      </a></p>
+      <p></p>
+      <button onclick="document.location='https://www.youtube.com/watch?v=vFfmL6kLY5I&ab_channel=Spinning'" target="_blank">Don't click</button>
     </section>
 
     <section class="section 2">
