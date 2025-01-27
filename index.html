@@ -4,23 +4,26 @@
   <head>
     <meta charset="UTF-8">
     <title>Hello HTML!</title>
+    <link rel="icon" type="image/x-icon" href="C:\Users\JetPa\Downloads\favicon.ico">
     <style>
-      body {background-color: powderblue;
-            border: 2px dashed plum      
+      body {
+            border: 2px dashed plum; background-image: url('Mountain-2.jpg'); background-size: cover;      
       }
       h1 {color:blue}
       p {color:red;
         border: 2px solid darkblue;
-        padding: 30px
+        padding: 30px;
+        background-image: url("C:\Users\JetPa\OneDrive\Desktop\first-day-repo\Week02\Mountain-2.jpg");
       }
     </style>
   </head>
 
-  <body style="background-color:powderblue;">
+  <body>
     <header>
       <!-- Headers -->
       <h1 title="THis is heading 1"> Hello World!</h1>
       <h2>Hello World!</h2>
+      <h2 id="C4">Chapter 4</h2>
       <h3>Hello World!</h3>
       <h4>Hello World!</h4>
       <h5>Hello World!</h5>
@@ -76,8 +79,22 @@
     </section>
 
     <section class="section 2">
+      <img src="Mountain-2.jpg;" alt="Workplace" usemap="#workmap">
+
+      <map name="workmap">
+        <area shape="rect" coords="34,44,270,350" alt="Computer" href="computer.htm">
+        <area shape="rect" coords="290,172,333,250" alt="Phone" href="phone.htm">
+        <area shape="circle" coords="337,300,44" alt="Coffee" href="coffee.htm">
+      </map>
+      <dl style="color:red">
+        <dt>Coffee</dt>
+        <dd>- black hot drink</dd>
+        <dt>Milk</dt>
+        <dd>- white cold drink</dd>
+      </dl>
     </section>
     <h7>Hello World x2!</h7>
+    <a href="#C4">Jump to Chapter 4</a>
   
   </body>
 
