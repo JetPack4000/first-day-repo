@@ -1,101 +1,255 @@
 <!DOCTYPE html>
 <html lang="en-US">
 
-  <head>
-    <meta charset="UTF-8">
-    <title>Hello HTML!</title>
-    <link rel="icon" type="image/x-icon" href="C:\Users\JetPa\Downloads\favicon.ico">
-    <style>
-      body {
-            border: 2px dashed plum; background-image: url('Mountain-2.jpg'); background-size: cover;      
-      }
-      h1 {color:blue}
-      p {color:red;
-        border: 2px solid darkblue;
-        padding: 30px;
-        background-image: url("C:\Users\JetPa\OneDrive\Desktop\first-day-repo\Week02\Mountain-2.jpg");
-      }
-    </style>
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="refresh" content="1000">
+  <title>Hello HTML!</title>
+  <link rel="icon" type="image/x-icon" href="C:\Users\JetPa\Downloads\favicon.ico">
+  <style>
+    body {
+      border: 2px dashed plum;
+      background-size: cover;
+    }
 
-  <body>
-    <header>
-      <!-- Headers -->
-      <h1 title="THis is heading 1"> Hello World!</h1>
-      <h2>Hello World!</h2>
-      <h2 id="C4">Chapter 4</h2>
-      <h3>Hello World!</h3>
-      <h4>Hello World!</h4>
-      <h5>Hello World!</h5>
-      <h6>Hello World!</h6>
-    </header>
+    h1 {
+      color: blue
+    }
 
-    <section class="section 1">
-      <!-- Image -->
-      <img src="https://placehold.it/200x200" alt="placeholder image" height = "200px" width="200px" title = "PLaceholder IMAGE"/>
+    p {
+      color: red;
+      border: 2px solid darkblue;
+      padding: 30px;
 
-      <!-- Paragraph -->
-      <p style="background-color: burlywood;">This is a paragraph.</p>
+    }
+  </style>
+</head>
+<!-- background-image: url('Mountain-2.jpg')-->
+<!-- background-image: url("C:\Users\JetPa\OneDrive\Desktop\first-day-repo\Week02\Mountain-2.jpg"); -->
 
-      <p>This is a paragraph with <strong>BOLDED TEXT</strong>.</p>
-      
-      <p> hEllo <b>There</b></p>
+<body>
+  <header>
+    <!-- Headers -->
+    <h1 title="THis is heading 1"> Hello World!</h1>
+    <h2>Hello World!</h2>
+    <h2 id="C4">Chapter 4</h2>
+    <h3>Hello World!</h3>
+    <h4>Hello World!</h4>
+    <h5>Hello World!</h5>
+    <h6>Hello World!</h6>
+  </header>
 
-      <p style="font-size: 86%; text-align: center;"><i><mark>HELLO THERE</mark></i></p>
+  <section class="section 1">
+    <!-- Image -->
+    <img src="https://placehold.it/200x200" alt="placeholder image" height="200px" width="200px"
+      title="PLaceholder IMAGE" />
 
-      <p style="color:blue"><em>General Kenobi</em></p>
+    <!-- Paragraph -->
+    <p style="background-color: burlywood;">This is a paragraph.</p>
 
-      <p>I am afraid of <del>women</del> <ins>spiders</ins> <sub>right?</sub><sup>I AM ABOVE</sup></p>
+    <p>This is a paragraph with <strong>BOLDED TEXT</strong>.</p>
 
-      <p> Why hello there <q>General Kenobi</q></p>
+    <p> hEllo <b>There</b></p>
 
-      <blockquote>
-        The recent attempt on my life has left me scared, and deformed. But I assure you, my resolve
-        is as strong as ever. Hencforth, the republic will be reorganized into the First! Galactic! Empire! To
-        ensure a safe and <strong>Secure</strong>, society.
-      </blockquote>
+    <p style="font-size: 86%; text-align: center;"><i><mark>HELLO THERE</mark></i></p>
 
-      <p> The <abbr title="United Soviet Socialst Republcis">USSR</abbr> was lost</p>
+    <p style="color:blue"><em>General Kenobi</em></p>
 
-      <bdo dir="rtl">Why Hello there</bdo>
-      <h1 style="background-color:rgb(60,179,113)"> GOODBYE</h1>
-    
-       <!-- Unordered list -->
-       <ul>
-        <li>This is list item one</li> 
-        <li>This is list item two</li>
-        <li>This is list item three</li>
-      </ul>
+    <p>I am afraid of <del>women</del> <ins>spiders</ins> <sub>right?</sub><sup>I AM ABOVE</sup></p>
 
-      <!-- Link -->
+    <p> Why hello there <q>General Kenobi</q></p>
 
-      <a href="https://www.w3schools.com/" target = "_blank">Visit W3Schools.com!</a>
-      <a href="https://www.google.com">This is a link to Google.com</a>
-      <p><a href="html_images.asp">HTML Images
+    <blockquote>
+      The recent attempt on my life has left me scared, and deformed. But I assure you, my resolve
+      is as strong as ever. Hencforth, the republic will be reorganized into the First! Galactic! Empire! To
+      ensure a safe and <strong>Secure</strong>, society.
+    </blockquote>
+
+    <p> The <abbr title="United Soviet Socialst Republcis">USSR</abbr> was lost</p>
+
+    <bdo dir="rtl">Why Hello there</bdo>
+    <h1 style="background-color:rgb(60,179,113)"> GOODBYE</h1>
+
+    <!-- Unordered list -->
+    <ul>
+      <li>This is list item one</li>
+      <li>This is list item two</li>
+      <li>This is list item three</li>
+    </ul>
+
+    <!-- Link -->
+
+    <a href="https://www.w3schools.com/" target="_blank">Visit W3Schools.com!</a>
+    <a href="https://www.google.com">This is a link to Google.com</a>
+    <p><a href="html_images.asp">HTML Images
         <img src="smiley.gif" alt="HTML Tutorial" style="width:42px;height:42px;">
       </a></p>
-      <p></p>
-      <button onclick="document.location='https://www.youtube.com/watch?v=vFfmL6kLY5I&ab_channel=Spinning'" target="_blank">Don't click</button>
-    </section>
+    <p></p>
+    <button onclick="document.location='https://www.youtube.com/watch?v=vFfmL6kLY5I&ab_channel=Spinning'"
+      target="_blank">Don't click</button>
+  </section>
 
-    <section class="section 2">
-      <img src="Mountain-2.jpg;" alt="Workplace" usemap="#workmap">
+  <section class="section 2">
+    <img src="Mountain-2.jpg;" alt="Workplace" usemap="#workmap">
 
-      <map name="workmap">
-        <area shape="rect" coords="34,44,270,350" alt="Computer" href="computer.htm">
-        <area shape="rect" coords="290,172,333,250" alt="Phone" href="phone.htm">
-        <area shape="circle" coords="337,300,44" alt="Coffee" href="coffee.htm">
-      </map>
-      <dl style="color:red">
-        <dt>Coffee</dt>
-        <dd>- black hot drink</dd>
-        <dt>Milk</dt>
-        <dd>- white cold drink</dd>
-      </dl>
-    </section>
-    <h7>Hello World x2!</h7>
-    <a href="#C4">Jump to Chapter 4</a>
-  
-  </body>
+    <map name="workmap">
+      <area shape="rect" coords="34,44,270,350" alt="Computer" href="computer.htm">
+      <area shape="rect" coords="290,172,333,250" alt="Phone" href="phone.htm">
+      <area shape="circle" coords="337,300,44" alt="Coffee" href="coffee.htm">
+    </map>
+    <dl style="color:red">
+      <dt>Coffee</dt>
+      <dd>- black hot drink</dd>
+      <dt>Milk</dt>
+      <dd>- white cold drink</dd>
+    </dl>
+  </section>
+  <section name="tables">
+    <table width="50%" border=2>
+      <tr>
+        <th style="border: 1px solid black;">Company</th>
+        <th style="border: 1px solid black;">Contact</th>
+        <th style="border: 1px solid black;">Country</th>
+      </tr>
+      <tr style="height: 120px;">
+        <td>Alfred</td>
+        <td>Fax</td>
+        <td>Germany</td>
+      </tr>
+      <tr style="height: 120px;">
+        <td>Joe</td>
+        <td>Fax</td>
+        <td>United States</td>
+      </tr>
+      <tr style="height: 120px;">
+        <td>Anne</td>
+        <td>Email</td>
+        <td>Japan</td>
+      </tr>
+      <tr style="height: 120px;">
+        <td>bob</td>
+        <td>email</td>
+        <td>France</td>
+      </tr>
+    </table>
+    <hr>
+    <table width="25%" height="100%" border=2>
+      <tr>
+        <th></th>
+        <th>Mon</th>
+        <th>Tues</th>
+        <th>Wed</th>
+        <th>Thur</th>
+        <th>Fri</th>
+      </tr>
+      <tr>
+        <th>8:00</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th>9:00</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th>10:00</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th>11:00</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th>12:00</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    <hr>
+    <table width="20%" border="2">
+      <colgroup>
+        <col span="1">
+        <col span="3" style="background-color: red;">
+      </colgroup>
+      <tr>
+        <Th colspan="2">BANANA</Th>
+        <th>Not</th>
+      </tr>
+      <tr>
+        <th rowspan="2">1</th>
+        <td>2</td>
+        <td>3</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+      </tr>
+    </table>
+  </section>
+  <h7>Hello World x2!</h7>
+  <a href="#C4">Jump to Chapter 4</a>
+  <section name="iframes">
+
+    <iframe src="https://www.houghtonstar.com/2024/09/27/why-women-are-terrifying/" height="200" width="300"
+      title="Iframe Example"></iframe>
+  </section>
+
+  <section name="input fields">
+    <form>
+      <label for="fname">First name:</label><br>
+      <input type="text" id="fname" name="fname"><br>
+      <label for="lname">Last name:</label><br>
+      <input type="text" id="lname" name="lname">
+    </form>
+    <p>Choose your favorite Web language:</p>
+
+    <form>
+      <input type="radio" id="html" name="fav_language" value="HTML">
+      <label for="html">HTML</label><br>
+      <input type="radio" id="css" name="fav_language" value="CSS">
+      <label for="css">CSS</label><br>
+      <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+      <label for="javascript">JavaScript</label>
+    </form>
+  </section>
+  <section name = "video">
+    <video width="320" height="240" controls>
+      <source src="C:\Users\JetPa\Videos\Captures\FTL_ Faster Than Light 2024-07-29 16-48-53.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+    </video>
+    <audio controls>
+      <source src="horse.ogg" type="audio/ogg">
+      <source src="horse.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+    </audio>
+    <iframe width="420" height="315"
+      src="https://www.youtube.com/embed/MtN1YnoL46Q">
+    </iframe>
+  </section>
+</body>
 
 </html>
