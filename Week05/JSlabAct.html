@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<style>
+    table {
+        width: 200px;
+        height: 200px;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    td {
+        border: 2px solid black;
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+    }
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript HTML!</title>
+    <!-- Latest compiled and minified CSS -->
+</head>
+
+<body>
+    <header>
+    </header>
+    <h1>1. calulate</h1>
+    <p>Formula: (30 + 25) + ((35 – 14) * 2)</p>
+    <h3>Calculated:</h3>
+    <p id="calculate"></p>
+    <h1>2. Bigger Number</h1>
+    <input tpe="number" id="numInput1" placeholder="Enter first number">
+    <input tpe="number" id="numInput2" placeholder="Enter Second number">
+    <button id="calculate" onclick="press()">Calculate</button>
+    <p id="Biggernumber"></p>
+    <h1>3. First 20 Numbers</h1>
+    <button type="button" name="table_generator" onclick="generateTable()">
+        GENERATE
+    </button>
+    <table id="tableContainer">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    <h1>4. Printing array</h1>
+    <input type="text" id="array[]" placeholder="e.g 1,2,3,4,5,6" /><br>
+    <button type="button" name="button" onclick="printArray()">
+        Print
+    </button>
+    <p id="printarray"></p>
+    <script>
+        document.getElementById("calculate").innerHTML = (30 + 25) + ((35 - 14) * 2)
+        function press() {
+            let num1 = document.getElementById("numInput1").value;
+            let num2 = document.getElementById("numInput2").value;
+            greaterthan(num1, num2);
+        }
+        function greaterthan(num1, num2) {
+            if (num1 > num2) {
+                document.getElementById("Biggernumber").innerHTML = num1
+            }
+            else if (num2 > num1) {
+                document.getElementById("Biggernumber").innerHTML = num2
+            }
+        }
+        const list20 = Array.from({ length: 20 }, (_, i) => i + 1);
+        document.getElementById("first20").innerHTML = list20
+        async function generateTable() {
+            
+            let cells = document.querySelectorAll("#tableContainer td")
+            let num = 1
+            for (let i = 0; i < cells.length; i++) {
+                await new Promise(resolve => setTimeout(resolve, 50)); // Delay of 200ms
+                cells[i].textContent = num++; // Assign number to the cell
+        }
+        }
+        function printArray() {
+            document.getElementById("printarray").innerHTML = "";
+            let br = document.createElement('br');
+            let output = "";
+            let k = "";
+            let input = document.getElementById("array[]").value;
+            k = input.split(",");
+            for (var i = 0; i < k.length; i++) {
+                document.getElementById("printarray").innerHTML += k[i];
+                document.getElementById("printarray").appendChild(br);
+            }
+
+        }
+
+
+    </script>
+</body>
+
+</html>
