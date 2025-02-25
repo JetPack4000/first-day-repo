@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <title>healthdata</title>
+    <!-- Latest compiled and minified CSS -->
+     <link rel="stylesheet" href="healthdata.css">
+
+</head>
+
+<body>
+    <header>
+        <h1>Historical Covid-19 Deaths Per Country</h1>
+    </header>
+    <label for="myDropdown">Select a Country:</label>
+    <select id="myDropdown" onchange="setcountry()">
+        <option value="">Loading...</option>
+    </select>
+    <div>
+        <canvas id="healthdatatest"></canvas>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        let CovidData
+        // getting the data for the chart
+
+
+        async function fetchCountries() {
+            try {
+                const response = await fetch("https://disease.sh/v3/covid-19/countries");
+                const data = await response.json();
+
+                // Extract country names
+                const countryList = data.map(country => country.country);
+                document.getElementById("myDropdown").innerHTML = '<option value="">Select a country</option>';
+
+                data.forEach(country => {
+                    let option = document.createElement("option")
+                    option.value = country.country
+                    option.textContent = country.country
+                    myDropdown.appendChild(option)
+                })
+                getData("https://disease.sh/v3/covid-19/historical/all?lastdays=all");
+                // console.log(countryList); // Prints list of country names
+            } catch (error) {
+                console.error("Error fetching countries:", error);
+            }
+        }
+
+
+        async function getData(url1) {
+            const url = url1;
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error(`Response status: ${response.status}`);
+                }
+
+                const json = await response.json();
+
+                const dates = Object.keys(json.cases)
+                const cases = Object.values(json.cases)
+                const death = Object.values(json.deaths)
+                const recover = Object.values(json.recovered)
+                // console.log(recover)
+
+                const labels = []
+                const values = [cases, death, recover]
+
+                createGraph(dates, cases, death, recover)
+
+            } catch (error) {
+                console.error(error.message);
+            }
+
+        }
+        async function getDataCountry(country, url1) {
+            const url = url1;
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error(`Response status: ${response.status}`);
+                }
+
+                const json = await response.json();
+
+                const countrydates = Object.keys(json.timeline.cases)
+                // console.log(dates)
+                const countrycases = Object.values(json.timeline.cases)
+                const countrydeath = Object.values(json.timeline.deaths)
+                const countryrecover = Object.values(json.timeline.recovered)
+                // console.log(countryrecover)
+
+
+                const labels = []
+                // const values = [cases, death, recover]
+                // removeData()
+                updateGraph(country, countrydates, countrycases, countrydeath, countryrecover)
+
+            } catch (error) {
+                console.error(error.message);
+            }
+
+        }
+
+        function createGraph(dates, cases, death, recover) {
+            const ctx = document.getElementById('healthdatatest').getContext('2d');
+            CovidData = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: dates, // X-axis labels
+                    datasets: [
+                        {
+                            label: 'Cases',
+                            data: cases, // Y-axis data points
+                            borderColor: '#006400', // Line color
+                            borderWidth: .5, // Line width
+                            fill: false // Do not fill area under the line
+                        },
+                        {
+                            label: 'Deaths',
+                            data: death, // Y-axis data points
+                            borderColor: '#800080', // Line color
+                            borderWidth: .5, // Line width
+                            fill: false // Do not fill area under the line
+                        },
+                        {
+                            label: 'Recovered',
+                            data: recover, // Y-axis data points
+                            borderColor: '#FF8C00', // Line color
+                            borderWidth: .5, // Line width
+                            fill: false // Do not fill area under the line
+                        }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Date'
+                            }
+                        },
+                        y: {
+                            min: 0,
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Amount'
+                            }
+
+                        }
+                    }
+                }
+            });
+        }
+
+        function updateGraph(country, dates, cases, death, recover) {
+            // console.log(cases)
+            CovidData.data.datasets[0].data = cases
+            CovidData.data.datasets[1].data = death
+            CovidData.data.datasets[2].data = recover
+            console.log(CovidData.data.datasets.data)
+            // CovidData.options.sacles.y[0].label = `COVID-19 Stats in ${country}`
+            CovidData.update()
+
+        }
+
+
+        function setcountry() {
+            const select_country = String(document.getElementById('myDropdown').value)
+            console.log(select_country)
+            getDataCountry(select_country, "https://disease.sh/v3/covid-19/historical/" + select_country + "?lastdays=all")
+        }
+        fetchCountries()
+    </script>
+    
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+button{
+    width: 30px;
+    height: 30px;
+    background-color:#333333 ;
+    color: white;
+    border-radius: 50%;
+}
+.operation{
+    background-color: orange;
+}
+.top{
+    background-color: darkgray;
+}
+div{
+    padding: 5px;
+    width: 135px;
+    height: 200px;
+    background-color: black;
+}
+div > p{
+    color: white;
+    text-align: right;
+}

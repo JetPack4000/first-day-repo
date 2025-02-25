@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript HTML!</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="JavascriptFundamentals.css">
+</head>
+
+<body>
+    <header>
+        <h1>Lab Excersise 8: Build a Simple Calculator</h1>
+    </header>
+
+    <div id="calculator">
+        <p id="Output">0</p>
+
+        <button class="top" onclick="cleardisplay()">AC</button>
+        <button class="top">+/-</button>
+        <button class="top">%</button>
+        <button class="operation" onclick="update('/')">/</button>
+        <br>
+        <button id="7" onclick="update(7)">7</button>
+        <button id="8" onclick="update(8)">8</button>
+        <button id="9" onclick="update(9)">9</button>
+        <button class="operation" onclick="update('*')">X</button>
+        <br>
+        <button id="4" onclick="update(4)">4</button>
+        <button id="5" onclick="update(5)">5</button>
+        <button id="6" onclick="update(6)">6</button>
+        <button class="operation" onclick="update('-')">-</button>
+        <br>
+        <button id="1" onclick="update(1)">1</button>
+        <button id="2" onclick="update(2)">2</button>
+        <button id="3" onclick="update(3)">3</button>
+        <button class="operation" onclick="update('+')">+</button>
+        <br>
+        <button id="!">!</button>
+        <button id="0" onclick="update(0)">0</button>
+        <button id="." onclick="update('.')">.</button>
+        <button class="operation" onclick="calculate()">=</button>
+        <br>
+
+    </div>
+    <script>
+
+        function cleardisplay() {
+            let temp = document.getElementById("Output")
+            temp.innerHTML = "0"
+        }
+
+        function update(button_item) {
+            let temp = document.getElementById("Output")
+            console.log(temp)
+            if (temp.innerText === '0') {
+                document.getElementById("Output").innerHTML = button_item
+            }
+            else {
+                document.getElementById("Output").innerHTML += button_item
+            }
+
+        }
+        function calculate() {
+            let to_be_eval = document.getElementById("Output").innerText
+            let answer = eval(to_be_eval)
+            console.log(answer)
+            document.getElementById("Output").innerHTML = answer
+        }
+    </script>
+</body>
+
+</html>

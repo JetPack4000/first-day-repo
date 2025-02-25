@@ -1,0 +1,23 @@
+body{
+    background-color: #001F3F;
+    text-align: center;
+}
+label,select{
+    margin-bottom: 20px;
+}
+label,header{
+    color: #FFD700;
+}
+select{
+    background-color: lightblue;
+    border-radius: 10px;
+}
+div{
+    border-radius: 20px;
+    padding: 20px;
+    background-color: lightblue;
+    width: 70%;
+    display: block;
+    margin: auto;
+    height: 500px;
+}
